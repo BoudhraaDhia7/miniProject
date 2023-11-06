@@ -57,7 +57,7 @@ The way Kubernetes deployment and service work to get the app running on the clu
 ## License
 
 
-Make sure to replace `https://github.com/BoudhraaDhia7/miniProject` with the actual URL to your GitHub or GitLab repository, and `your-dockerhub-username/your-app` with the name of your Docker image. 
+Make sure to replace `https://github.com/BoudhraaDhia7/miniProject` with the actual URL to your GitHub or GitLab repository, and `boudhraadhia7/miniproject01` with the name of your Docker image. 
 
 This file is typically named `README.md` and placed in the root of your repository so that GitHub/GitLab will automatically display it when someone visits your repository. Save this content as `README.md` and commit it to your project's root directory.
 
