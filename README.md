@@ -197,12 +197,8 @@ This project is configured for deployment on a Kubernetes cluster, ensuring scal
 
 3. **Monitoring and Management**:
    - **Kubernetes Dashboard**: The Kubernetes Dashboard is a useful tool for monitoring the state of deployments and services. It provides a user-friendly interface to interact with your Kubernetes cluster.
-   - **Kubectl Commands**: Regularly use `kubectl` commands like `kubectl get pods`, `kubectl describe pod <pod-name>`, and `kubectl logs <pod-name>` to monitor and debug the deployed services.
+   - **Kubectl Commands**: Regularly use `kubectl` commands like `kubectl get pods`, `kubectl describe pod `, and `kubectl logs` to monitor and debug the deployed services.
 
-### Scaling and Updating
-
-- **Scaling Services**: You can scale your deployments by using the command `kubectl scale deployment <deployment-name> --replicas=<number>`. This is particularly useful for handling varying loads on your services.
-- **Updating Deployments**: To update a deployment (e.g., rolling out a new Docker image), use `kubectl set image deployment/<deployment-name> <container-name>=<new-image>`.
 
 ### Cleanup
 
