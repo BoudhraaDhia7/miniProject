@@ -19,20 +19,26 @@ pipeline {
         stage('Build Backend') {
             steps {
                 script {
-                    // Build the Docker image for the backend
-                    docker.build "${DOCKER_IMAGE_BACKEND}" , 
+                    dir('server') {
+                        sh 'ls -la' // Lists all files in the server directory
+                        sh 'docker build -t boudhraadhia7/myapp-backend .'
+                    }
                 }
             }
         }
 
+
         stage('Build Frontend') {
             steps {
                 script {
-                    // Build the Docker image for the frontend
-                    docker.build "${DOCKER_IMAGE_FRONTEND}", 
+                    dir('client') {
+                        sh 'ls -la' // Lists all files in the server directory
+                        sh 'docker build -t boudhraadhia7/myapp-frontend .'
+                    }
                 }
             }
         }
+
 
         stage('Unit Tests') {
             steps {
