@@ -1,75 +1,39 @@
-# SimpleCI/CDPipeline
+# Mini DevOps Project
 
-## Description
+## Overview
 
-Welcome to SimpleCI/CDPipeline, beginner guide to the exciting world of DevOps. This mini-project is designed to introduce you to key DevOps concepts and tools in a clear and easy-to-understand way. You'll learn about Docker, Jenkins, and Kubernetes, and see how they work together in real-world scenarios.
+This mini-project demonstrates a full DevOps pipeline, including Docker containerization, Jenkins CI/CD, basic unit testing, and Kubernetes deployment for a web application with separate backend and frontend components.
 
-## Key Features
-- `Docker Basics:` Get started with Docker and containerization.
+![Project Architecture](path/to/architecture_diagram.png)
 
-- `Jenkins for Automation:` Set up a basic Jenkins pipeline for automation.
+## Dockerization
 
-- `Intro to Kubernetes:` Understand the fundamentals of Kubernetes for container management.
+### Backend Dockerfile
 
-- `Simple Testing:` Learn how to write and run simple tests.
+... [Previous content]
 
-- `Easy CI/CD:` Understand the steps of Continuous Integration and Continuous Deployment in a way that's easy to grasp.
+### Frontend Dockerfile
 
+... [Previous content]
 
-## Installation Guide
+## Jenkins Pipeline
 
-This guide will walk you through setting up and running the MiniDevOpsFlow project.
+... [Previous content]
 
-### Prerequisites
+## Kubernetes Deployment
 
-Ensure you have the following installed before proceeding:
+The application is deployed on a Kubernetes cluster, ensuring high availability and scalability.
 
-- Docker: [Download Docker](https://www.docker.com/products/docker-desktop)
-- Jenkins: [Install Jenkins](https://www.jenkins.io/download/)
-- Git: [Install Git](https://git-scm.com/downloads)
-- Node.js: [Download Node.js](https://nodejs.org/en/download/) (for running the application locally)
+### Kubernetes Architecture
 
-### Step 1: Clone the Repository
+Briefly describe the Kubernetes architecture used, including any services, deployments, and pods.
 
-Clone the MiniDevOpsFlow project from GitHub:
+![Kubernetes Architecture](path/to/kubernetes_architecture.png)
 
-```bash
-git clone https://github.com/BoudhraaDhia7/miniProject.git
-cd miniProject
+### Deployment Process
 
-### Step 2: Docker Setup
-
-Build the Docker images for both the backend and frontend.
-
-**Backend:**
-
-Navigate to the `server` directory and build the Docker image:
+Explain the steps for deploying the application on Kubernetes, including setting up the environment, applying Kubernetes manifests, and verifying the deployment.
 
 ```bash
-cd server
-docker build -t mini-devops-backend .
-
-
-**Frontend:**
-
-Navigate to the `server` directory and build the Docker image:
-
-```bash
-cd client
-docker build -t mini-devops-frontend .
-
-## Usage
-
-How to use your application, any tips or tricks for getting the most out of your app.
-
-## CI/CD
-
-Explain how the CI/CD pipeline works and how one can replicate it.
-
-## Contributing
-
-Instructions for how to contribute to the project, if you are open to contributions.
-
-## License
-
-If your project is open-source, state the type of license you're using.
+# Kubernetes deployment commands
+kubectl apply -f k8s-manifest.yaml
