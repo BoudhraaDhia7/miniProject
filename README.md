@@ -178,6 +178,7 @@ Explain the steps for deploying the application on Kubernetes, including setting
 ```bash
 # Kubernetes deployment commands
 kubectl apply -f k8s-manifest.yaml
+```
 
 ## Kubernetes Deployment
 
@@ -208,9 +209,8 @@ This project is configured for deployment on a Kubernetes cluster, ensuring scal
 - To remove the deployed services and clean up your Kubernetes cluster, run `kubectl delete -f backend-deployment.yaml`, `kubectl delete -f frontend-deployment.yaml`, and `kubectl delete -f service.yaml`.
 
 ---
-```
-
 This section outlines the basic steps for deploying the application on Kubernetes. For more detailed instructions or troubleshooting, refer to the official [Kubernetes documentation](https://kubernetes.io/docs/).
+
 ## Conclusion
 
 This project showcases a complete CI/CD pipeline using Jenkins, Docker, and Kubernetes, demonstrating the capabilities of modern DevOps practices.
