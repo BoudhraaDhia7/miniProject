@@ -64,7 +64,7 @@ This mini-project demonstrates a full DevOps pipeline, including Docker containe
     EXPOSE 80
 
     # No need for CMD because it's included in the nginx base image
-![Project Architecture](path/to/architecture_diagram.png)
+![Project Architecture](images/arch.gif)
 
 ```
 
