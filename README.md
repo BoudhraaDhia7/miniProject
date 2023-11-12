@@ -67,6 +67,8 @@ This mini-project demonstrates a full DevOps pipeline, including Docker containe
 
 
 ```
+![Backend Dockerfile Build](images/frontbuild.PNG)
+![Backend Dockerfile Build](images/frontpush.PNG)
 
 
 ## Jenkins Pipeline
@@ -81,8 +83,7 @@ The application is deployed on a Kubernetes cluster, ensuring high availability 
 
 Briefly describe the Kubernetes architecture used, including any services, deployments, and pods.
 
-![Backend Dockerfile Build](images/frontbuild.PNG)
-![Backend Dockerfile Build](images/frontpush.PNG)
+
 
 ### Deployment Process
 
