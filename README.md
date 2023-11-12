@@ -81,7 +81,8 @@ The application is deployed on a Kubernetes cluster, ensuring high availability 
 
 Briefly describe the Kubernetes architecture used, including any services, deployments, and pods.
 
-![Kubernetes Architecture](path/to/kubernetes_architecture.png)
+![Backend Dockerfile Build](images/frontbuild.PNG)
+![Backend Dockerfile Build](images/frontpush.PNG)
 
 ### Deployment Process
 
