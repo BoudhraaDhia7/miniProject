@@ -42,6 +42,12 @@ pipeline {
 
         stage('Unit Tests') {
             steps {
+                // script {
+                //     dir('client') {
+                //        sh 'ls -la' // Lists all files in the server directory
+                //        sh 'npm test'
+                //     }
+                // }
 
                 script {
                     dir('server') {
