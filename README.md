@@ -145,6 +145,8 @@ The Jenkins Pipeline automates the process of building Docker images for both th
         }
     }
     ```
+    ![Jenkins Pipeline](images/dockerpush.PNG)
+
 
 6. **Deploy**: In this stage, the application is deployed to a Kubernetes cluster using kubectl commands.
 
