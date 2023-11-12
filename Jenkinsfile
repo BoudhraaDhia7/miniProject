@@ -42,7 +42,12 @@ pipeline {
 
         stage('Unit Tests') {
             steps {
+                sh 'cd server'
                 sh 'npm test'
+                sh 'cd ..'
+                sh 'cd client'
+                sh 'npm test'
+                sh 'echo "Unit tests passed"'
             }
         }
 
