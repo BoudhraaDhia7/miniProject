@@ -42,17 +42,16 @@ pipeline {
 
         stage('Unit Tests') {
             steps {
-                // For backend tests
-                dir('server') {
-                    sh 'npm test'
-                }
-                // For frontend tests
-                dir('client') {
-                    sh 'npm test'
-                }
+                // Run tests in the backend directory
+                sh 'cd server && npm test'
+
+                // Run tests in the frontend directory
+                sh 'cd client && npm test'
+
                 sh 'echo "Unit tests passed"'
             }
         }
+
 
         stage('Push to Registry') {
         when {
