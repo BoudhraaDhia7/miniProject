@@ -167,7 +167,7 @@ The `Jenkinsfile` is located at the root of the repository and is configured as 
 
 The pipeline is triggered on each commit to the repository, ensuring that every change is automatically built, tested, and ready for deployment.
 
-![Pipeline Execution](path/to/pipeline_execution.gif)
+![Pipeline Execution](images/pipeline.gif)
 
 
 
