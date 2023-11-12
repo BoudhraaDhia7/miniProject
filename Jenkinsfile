@@ -68,8 +68,7 @@ pipeline {
 
     post {
         always {
-            // Actions to perform after the pipeline completes
-            // For example, clean up, send notifications, etc.
+            echo 'Performing some actions Als ist gut'
         }
     }
 }
