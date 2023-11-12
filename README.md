@@ -5,15 +5,15 @@
 Welcome to SimpleCI/CDPipeline, beginner guide to the exciting world of DevOps. This mini-project is designed to introduce you to key DevOps concepts and tools in a clear and easy-to-understand way. You'll learn about Docker, Jenkins, and Kubernetes, and see how they work together in real-world scenarios.
 
 ## Key Features
-- `Docker Basics`: Learn how to use Docker to create containers for a simple web application. We'll cover how to build and manage these containers.
+- `Docker Basics:` Get started with Docker and containerization.
 
-- Jenkins for Automation: Discover how Jenkins can automate your workflow. You'll set up a Jenkins pipeline that takes care of testing and integrating your code automatically.
+- `Jenkins for Automation:` Set up a basic Jenkins pipeline for automation.
 
-- Intro to Kubernetes: Get to know Kubernetes, a tool that helps manage your containers. We'll show you the basics of how it works and why it's useful.
+- `Intro to Kubernetes:` Understand the fundamentals of Kubernetes for container management.
 
-- Simple Testing: We'll guide you through setting up basic tests for your application to make sure everything works as expected.
+- `Simple Testing:` Learn how to write and run simple tests.
 
-- Easy CI/CD: Understand the steps of Continuous Integration and Continuous Deployment in a way that's easy to grasp.
+- `Easy CI/CD:` Understand the steps of Continuous Integration and Continuous Deployment in a way that's easy to grasp.
 
 ## Installation
 
