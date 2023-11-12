@@ -3,8 +3,8 @@ pipeline {
 
     environment {
         // Define environment variables, Docker registry, etc.
-        DOCKER_IMAGE_BACKEND = "your-backend-image-name"
-        DOCKER_IMAGE_FRONTEND = "your-frontend-image-name"
+        DOCKER_IMAGE_BACKEND = "boudhraadhia7/myapp-backend"
+        DOCKER_IMAGE_FRONTEND = "boudhraadhia7/myapp-frontend"
         // More environment variables can be added here
     }
 
