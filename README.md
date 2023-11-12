@@ -82,10 +82,13 @@ The Jenkins Pipeline automates the process of building Docker images for both th
 2. **Build Backend**: This stage builds the Docker image for the backend from the Dockerfile located in the `/server` directory.
 
     ```groovy
-    stage('Build Backend') {
+   stage('Build Backend') {
         steps {
             script {
-                docker.build "myapp-backend:latest", "./server"
+                dir('server') {
+                    sh 'ls -la' // Lists all files in the server directory
+                    sh 'docker build -t boudhraadhia7/myapp-backend .'
+                }
             }
         }
     }
@@ -94,10 +97,13 @@ The Jenkins Pipeline automates the process of building Docker images for both th
 3. **Build Frontend**: Similar to the backend, this stage builds the Docker image for the frontend from the Dockerfile in the `/client` directory.
 
     ```groovy
-    stage('Build Frontend') {
+      stage('Build Frontend') {
         steps {
             script {
-                docker.build "myapp-frontend:latest", "./client"
+                dir('client') {
+                    sh 'ls -la' // Lists all files in the server directory
+                    sh 'docker build -t boudhraadhia7/myapp-frontend .'
+                }
             }
         }
     }
@@ -108,8 +114,19 @@ The Jenkins Pipeline automates the process of building Docker images for both th
     ```groovy
     stage('Unit Tests') {
         steps {
-            sh 'cd server && npm test'
-            sh 'cd client && npm test'
+            script {
+                dir('client') {
+                   sh 'ls -la' // Lists all files in the server directory
+                   sh 'npm test'
+                }
+            }
+            script {
+                dir('server') {
+                   sh 'npm install'
+                   sh 'npm test'
+                }
+            }
+            sh 'echo "Unit tests passed"'
         }
     }
     ```
