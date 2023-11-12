@@ -1,5 +1,5 @@
 # Mini DevOps Project
-
+![Project Architecture](images/arch.gif)
 ## Overview
 
 This mini-project demonstrates a full DevOps pipeline, including Docker containerization, Jenkins CI/CD, basic unit testing, and Kubernetes deployment for a web application with separate backend and frontend components.
@@ -64,7 +64,7 @@ This mini-project demonstrates a full DevOps pipeline, including Docker containe
     EXPOSE 80
 
     # No need for CMD because it's included in the nginx base image
-![Project Architecture](images/arch.gif)
+
 
 ```
 
