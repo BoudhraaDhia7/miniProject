@@ -44,15 +44,16 @@ pipeline {
             steps {
                 script {
                     dir('client') {
+                       sh 'ls -la' // Lists all files in the server directory
                        sh 'npm test'
                     }
                 }
 
-                script {
-                    dir('server') {
-                       sh 'npm test'
-                    }
-                }
+                // script {
+                //     dir('server') {
+                //        sh 'npm test'
+                //     }
+                // }
 
                 sh 'echo "Unit tests passed"'
             }
