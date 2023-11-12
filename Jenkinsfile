@@ -51,8 +51,7 @@ pipeline {
 
                 script {
                     dir('server') {
-                       sh 'npm list' 
-                       sh 'npm install mocha'
+                       sh 'npm install'
                        sh 'npm test'
                     }
                 }
