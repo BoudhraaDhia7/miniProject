@@ -17,6 +17,10 @@ mongoose.connect(
   }
 );
 
+app.get('/', (req, res) => {
+  res.send('Hello World!');
+});
+
 app.get("/towns/save", async (req, res) => {
   try {
     const response = await axios.get(
@@ -240,3 +244,5 @@ app.post("/save-data", async (req, res) => {
 app.listen(3001, () => {
   console.log("Server started on port 3001");
 });
+
+module.exports = app;

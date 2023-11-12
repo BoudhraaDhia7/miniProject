@@ -3,10 +3,10 @@ import PureCounter from "@srexi/purecounterjs";
 import { useNavigate } from "react-router-dom";
 import { useRef } from "react";
 
+import Axios from "axios";
+
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from "react-toastify";
-
-import Axios from "axios";
 
 import { AutoCompleteComponent } from "@syncfusion/ej2-react-dropdowns";
 

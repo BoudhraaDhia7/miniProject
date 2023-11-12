@@ -2,74 +2,74 @@ pipeline {
     agent any
 
     environment {
-        // Define environment variables
-        DOCKERHUB_CREDENTIALS = credentials('docker-hub-credentials') // Replace with your Docker Hub credentials ID
-        IMAGE_TAG = "boudhraadhia7/miniproject01:${env.BUILD_ID}" // Replace with your image tag
+        // Define environment variables, Docker registry, etc.
+        DOCKER_IMAGE_BACKEND = "your-backend-image-name"
+        DOCKER_IMAGE_FRONTEND = "your-frontend-image-name"
+        // More environment variables can be added here
     }
 
     stages {
         stage('Checkout') {
             steps {
-                // Get the latest code from the SCM
+                // Get the latest code from your source control
                 checkout scm
             }
         }
 
-        stage('Build') {
+        stage('Build Backend') {
             steps {
-                // Build the Docker image for the React app
                 script {
-                    docker.build("$IMAGE_TAG-client", "-f ./client/Dockerfile ./client")
+                    // Build the Docker image for the backend
+                    docker.build "${DOCKER_IMAGE_BACKEND}"
                 }
             }
         }
 
-        stage('Test') {
+        stage('Build Frontend') {
             steps {
-                // Run tests here or any other commands you need
-                sh 'echo "Running tests"'
-                // sh 'npm test' // Example for Node.js projects
-            }
-        }
-
-        stage('Docker Push') {
-            steps {
-                // Push the image to Docker Hub
                 script {
-                    docker.withRegistry('', "$DOCKERHUB_CREDENTIALS") {
-                        docker.image("$IMAGE_TAG-client").push()
-                    }
+                    // Build the Docker image for the frontend
+                    docker.build "${DOCKER_IMAGE_FRONTEND}"
                 }
             }
         }
+
+        stage('Unit Tests') {
+            steps {
+                'npm test'
+            }
+        }
+
+        stage('Push to Registry') {
+        when {
+            branch 'main' // Only push images for the main branch
+        }
+        steps {
+            script {
+                // Login to Docker Hub and push the images
+                docker.withRegistry('https://registry.hub.docker.com', 'boudhraadhia7') {
+                    docker.image("${DOCKER_IMAGE_BACKEND}").push()
+                    docker.image("${DOCKER_IMAGE_FRONTEND}").push()
+                }
+            }
+        }
+    }
 
         stage('Deploy') {
+            when {
+                branch 'main' 
+            }
             steps {
-                // Deploy to Kubernetes
-                script {
-                    // Set up kubectl
-                    // Use 'kubectl' or 'helm' or any other deployment tool you have configured
-                    sh 'echo "Deploying to Kubernetes"'
-                    sh 'kubectl set image deployment/your-app-deployment your-container=$IMAGE_TAG-client'
-                }
+                // Deploy your application
+                // This might involve SSHing to a server, using a tool like Ansible, or a Kubernetes deployment
             }
         }
     }
 
     post {
         always {
-            // Clean up workspace after the build is done
-            cleanWs()
-        }
-
-        success {
-            // Actions to perform on successful build
-            sh 'echo "Build succeeded!"'
-        }
-
-        failure {
-            // Actions to perform if the build fails
-            sh 'echo "Build failed!"'
+            // Actions to perform after the pipeline completes
+            // For example, clean up, send notifications, etc.
         }
     }
 }
