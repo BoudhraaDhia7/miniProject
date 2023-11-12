@@ -42,11 +42,17 @@ pipeline {
 
         stage('Unit Tests') {
             steps {
-                // Run tests in the backend directory
-                sh 'cd server && npm test'
+                script {
+                    dir('client') {
+                       sh 'npm test'
+                    }
+                }
 
-                // Run tests in the frontend directory
-                sh 'cd client && npm test'
+                script {
+                    dir('server') {
+                       sh 'npm test'
+                    }
+                }
 
                 sh 'echo "Unit tests passed"'
             }
