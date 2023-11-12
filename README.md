@@ -160,7 +160,7 @@ The Jenkins Pipeline automates the process of building Docker images for both th
 
 The `Jenkinsfile` is located at the root of the repository and is configured as a Declarative Pipeline in Jenkins.
 
-![Jenkins Pipeline](path/to/jenkins_pipeline_screenshot.png)
+![Jenkins Pipeline](images/pipeline.PNG)
 
 ### Pipeline Execution
 
