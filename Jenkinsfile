@@ -3,8 +3,8 @@ pipeline {
 
     environment {
         // Define environment variables, Docker registry, etc.
-        DOCKER_IMAGE_BACKEND  = "/server"
-        DOCKER_IMAGE_FRONTEND = "/client"
+        DOCKER_IMAGE_BACKEND  = "boudhraadhia7/myapp-backend:latest"
+        DOCKER_IMAGE_FRONTEND = "boudhraadhia7/myapp-frontend:latest"
         // More environment variables can be added here
     }
 
@@ -62,16 +62,16 @@ pipeline {
 
 
         stage('Push to Registry') {
-        steps {
-            script {
-                // Login to Docker Hub and push the images
-                docker.withRegistry('https://registry.hub.docker.com', 'boudhraadhia7') {
-                    docker.image("${DOCKER_IMAGE_BACKEND}").push()
-                    docker.image("${DOCKER_IMAGE_FRONTEND}").push()
+            steps {
+                script {
+                    // Login to Docker Hub and push the images
+                    docker.withRegistry('https://registry.hub.docker.com', 'boudhraadhia7') {
+                        docker.image("${DOCKER_IMAGE_BACKEND}").push()
+                        docker.image("${DOCKER_IMAGE_FRONTEND}").push()
+                    }
                 }
             }
         }
-    }
 
         stage('Deploy') {
             steps {
