@@ -60,8 +60,7 @@ pipeline {
                 branch 'main' 
             }
             steps {
-                // Deploy your application
-                // This might involve SSHing to a server, using a tool like Ansible, or a Kubernetes deployment
+                echo 'Deployment steps will go here'
             }
         }
     }
