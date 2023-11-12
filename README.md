@@ -15,11 +15,48 @@ Welcome to SimpleCI/CDPipeline, beginner guide to the exciting world of DevOps. 
 
 - `Easy CI/CD:` Understand the steps of Continuous Integration and Continuous Deployment in a way that's easy to grasp.
 
-## Installation
 
-Detailed instructions on how to install and set up your project locally.
-- Pre-requisites
-- Installation steps
+## Installation Guide
+
+This guide will walk you through setting up and running the MiniDevOpsFlow project.
+
+### Prerequisites
+
+Ensure you have the following installed before proceeding:
+
+- Docker: [Download Docker](https://www.docker.com/products/docker-desktop)
+- Jenkins: [Install Jenkins](https://www.jenkins.io/download/)
+- Git: [Install Git](https://git-scm.com/downloads)
+- Node.js: [Download Node.js](https://nodejs.org/en/download/) (for running the application locally)
+
+### Step 1: Clone the Repository
+
+Clone the MiniDevOpsFlow project from GitHub:
+
+```bash
+git clone https://github.com/BoudhraaDhia7/miniProject.git
+cd miniProject
+
+### Step 2: Docker Setup
+
+Build the Docker images for both the backend and frontend.
+
+**Backend:**
+
+Navigate to the `server` directory and build the Docker image:
+
+```bash
+cd server
+docker build -t mini-devops-backend .
+
+
+**Frontend:**
+
+Navigate to the `server` directory and build the Docker image:
+
+```bash
+cd client
+docker build -t mini-devops-frontend .
 
 ## Usage
 
