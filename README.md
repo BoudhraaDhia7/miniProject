@@ -4,8 +4,6 @@
 
 This mini-project demonstrates a full DevOps pipeline, including Docker containerization, Jenkins CI/CD, basic unit testing, and Kubernetes deployment for a web application with separate backend and frontend components.
 
-![Project Architecture](path/to/architecture_diagram.png)
-
 ## Dockerization
 
 ### Backend Dockerfile
@@ -34,7 +32,7 @@ This mini-project demonstrates a full DevOps pipeline, including Docker containe
     CMD [ "node", "index.js" ]
 
 ```
-
+![Backend Dockerfile Build](images/backbuildandpush.png)
 ### Frontend Dockerfile
 
 ```shell
@@ -66,7 +64,7 @@ This mini-project demonstrates a full DevOps pipeline, including Docker containe
     EXPOSE 80
 
     # No need for CMD because it's included in the nginx base image
-
+![Project Architecture](path/to/architecture_diagram.png)
 
 ```
 
