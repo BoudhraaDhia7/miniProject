@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         // Define environment variables, Docker registry, etc.
-        DOCKER_IMAGE_BACKEND = "boudhraadhia7/myapp-backend"
+        DOCKER_IMAGE_BACKEND  = "boudhraadhia7/myapp-backend"
         DOCKER_IMAGE_FRONTEND = "boudhraadhia7/myapp-frontend"
         // More environment variables can be added here
     }
@@ -20,7 +20,7 @@ pipeline {
             steps {
                 script {
                     // Build the Docker image for the backend
-                    docker.build "${DOCKER_IMAGE_BACKEND}"
+                    docker.build "${DOCKER_IMAGE_BACKEND}" , "./server"
                 }
             }
         }
@@ -29,7 +29,7 @@ pipeline {
             steps {
                 script {
                     // Build the Docker image for the frontend
-                    docker.build "${DOCKER_IMAGE_FRONTEND}"
+                    docker.build "${DOCKER_IMAGE_FRONTEND}", "./client"
                 }
             }
         }
