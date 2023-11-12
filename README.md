@@ -32,7 +32,7 @@ This mini-project demonstrates a full DevOps pipeline, including Docker containe
     CMD [ "node", "index.js" ]
 
 ```
-![Backend Dockerfile Build](images/backbuildandpush.png)
+![Backend Dockerfile Build](images/backbuildandpush.PNG)
 ### Frontend Dockerfile
 
 ```shell
