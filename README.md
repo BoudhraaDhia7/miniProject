@@ -73,15 +73,83 @@ This mini-project demonstrates a full DevOps pipeline, including Docker containe
 
 ## Jenkins Pipeline
 
-... [Previous content]
+The Jenkins Pipeline automates the process of building Docker images for both the backend and frontend, running unit tests, and pushing the images to a Docker registry. The pipeline is defined in a `Jenkinsfile`, which contains multiple stages to handle different parts of the process.
 
-## Kubernetes Deployment
+### Pipeline Stages
 
-The application is deployed on a Kubernetes cluster, ensuring high availability and scalability.
+1. **Checkout**: The pipeline checks out the code from the GitHub repository.
 
-### Kubernetes Architecture
+2. **Build Backend**: This stage builds the Docker image for the backend from the Dockerfile located in the `/server` directory.
 
-Briefly describe the Kubernetes architecture used, including any services, deployments, and pods.
+    ```groovy
+    stage('Build Backend') {
+        steps {
+            script {
+                docker.build "myapp-backend:latest", "./server"
+            }
+        }
+    }
+    ```
+
+3. **Build Frontend**: Similar to the backend, this stage builds the Docker image for the frontend from the Dockerfile in the `/client` directory.
+
+    ```groovy
+    stage('Build Frontend') {
+        steps {
+            script {
+                docker.build "myapp-frontend:latest", "./client"
+            }
+        }
+    }
+    ```
+
+4. **Unit Tests**: Runs unit tests for both backend and frontend. The tests are located in their respective directories.
+
+    ```groovy
+    stage('Unit Tests') {
+        steps {
+            sh 'cd server && npm test'
+            sh 'cd client && npm test'
+        }
+    }
+    ```
+
+5. **Push to Registry**: This stage logs into Docker Hub and pushes both backend and frontend images to the Docker registry.
+
+    ```groovy
+    stage('Push to Registry') {
+        steps {
+            script {
+                docker.withRegistry('https://registry.hub.docker.com', 'dockerHubCredentials') {
+                    docker.image("myapp-backend:latest").push()
+                    docker.image("myapp-frontend:latest").push()
+                }
+            }
+        }
+    }
+    ```
+
+6. **Deploy**: In this stage, the application is deployed to a Kubernetes cluster using kubectl commands.
+
+    ```groovy
+    stage('Deploy') {
+        steps {
+            sh 'kubectl apply -f k8s-manifest.yaml'
+        }
+    }
+    ```
+
+### Jenkinsfile
+
+The `Jenkinsfile` is located at the root of the repository and is configured as a Declarative Pipeline in Jenkins.
+
+![Jenkins Pipeline](path/to/jenkins_pipeline_screenshot.png)
+
+### Pipeline Execution
+
+The pipeline is triggered on each commit to the repository, ensuring that every change is automatically built, tested, and ready for deployment.
+
+![Pipeline Execution](path/to/pipeline_execution.gif)
 
 
 
