@@ -62,9 +62,6 @@ pipeline {
 
 
         stage('Push to Registry') {
-        when {
-            branch 'main' // Only push images for the main branch
-        }
         steps {
             script {
                 // Login to Docker Hub and push the images
@@ -77,9 +74,6 @@ pipeline {
     }
 
         stage('Deploy') {
-            when {
-                branch 'main' 
-            }
             steps {
                 echo 'Deployment steps will go here'
             }
