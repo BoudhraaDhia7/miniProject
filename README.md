@@ -122,7 +122,6 @@ The Jenkins Pipeline automates the process of building Docker images for both th
             }
             script {
                 dir('server') {
-                   sh 'npm install'
                    sh 'npm test'
                 }
             }
